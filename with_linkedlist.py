@@ -9,6 +9,11 @@ class LinkedList:
         self.tail=None
         self.length=0
     
+    def isEmpty(self):
+        if self.head is None:
+            return True
+        return False
+    
     def Enqueue(self,value):
         new_node=Node(value)
         if self.head is None:
@@ -28,6 +33,10 @@ class LinkedList:
     
     def peek(self):
         return self.head.value
+    
+    def delete(self):
+        self.head=None
+        self.tail=None
     
     def __str__(self):
         temp=self.head
