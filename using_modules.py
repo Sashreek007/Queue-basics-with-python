@@ -17,3 +17,6 @@ custom_queue.put(10)
 custom_queue.put(20)
 custom_queue.put(30)
 print(custom_queue.qsize())
+
+
+
