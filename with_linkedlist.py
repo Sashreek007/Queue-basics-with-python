@@ -8,38 +8,42 @@ class LinkedList:
         self.head=None
         self.tail=None
         self.length=0
-    
+
+class Queue:
+    def __init__(self):
+        self.LinkedList = LinkedList()
+        
     def isEmpty(self):
-        if self.head is None:
+        if self.LinkedList.head is None:
             return True
         return False
     
     def Enqueue(self,value):
         new_node=Node(value)
-        if self.head is None:
-            self.head=new_node
-            self.tail=new_node
+        if self.LinkedList.head is None:
+            self.LinkedList.head=new_node
+            self.LinkedList.tail=new_node
         else:
-            self.tail.next=new_node
-            self.tail=new_node
-        self.length+=1
+            self.LinkedList.tail.next=new_node
+            self.LinkedList.tail=new_node
+        self.LinkedList.length+=1
     
     def dequeue(self):
-        pop=self.head
-        self.head=self.head.next
+        pop=self.LinkedList.head
+        self.LinkedList.head=self.LinkedList.head.next
         pop.next=None
-        self.length-=1
+        self.LinkedList.length-=1
         return pop.value
     
     def peek(self):
-        return self.head.value
+        return self.LinkedList.head.value
     
     def delete(self):
-        self.head=None
-        self.tail=None
+        self.LinkedList.head=None
+        self.LinkedList.tail=None
     
     def __str__(self):
-        temp=self.head
+        temp=self.LinkedList.head
         result=' '
         while temp is not None:
             result += str(temp.value)
@@ -48,7 +52,7 @@ class LinkedList:
             temp=temp.next
         return result
     
-new_linked_list=LinkedList()
+new_linked_list=Queue()
 new_linked_list.Enqueue(10)
 new_linked_list.Enqueue(20)
 new_linked_list.Enqueue(30)
